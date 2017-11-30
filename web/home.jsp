@@ -38,63 +38,63 @@
                 <form>
                     <div class="filtros row">
                         <div class="col-sm-3 md-form">
-                            <i class="fa fa-building prefix"></i>
+                            <i class="iconefiltro fa fa-building prefix"></i>
                             <label for="filtroNomeEmpresa"><b>Nome da empresa:</b></label>
-                            <input type="text" class=" form-control" id="filtroNome">
+                            <input style="padding-bottom: 10px;" type="text" class="txtinput form-control" id="filtroNome">
                           
                         </div>
-                        <div class="drop col-sm-3 md-form">
-                            <label id="img_category_label"class="field"for="img_category"data-value="">
-                                <span>Categoria</span>
-                                <div id="img_category"class="psuedo_select"name="img_category">
-                                        <span class="selected"></span>
-                                        <ul id="img_category_options"class="options">
-                                                <li class="option"data-value="commercial">Commercial</li>
-                                                <li class="option"data-value="residential">Residential</li>
-                                        </ul>
-                                </div>
-                            </label>
-  
-                            <script src="js/index.js"></script>               
+                        <div class="col-sm-2 ">
+                            
+                            <select id="filtroCategoriaEmpresa" class="form-control centered-col">
+                                <option selected disabled>Categoria</option>
+                                <option>Alimentação</option>
+                                <option>Beleza</option>
+                            </select>
                         </div>
                         <div class="col-sm-3 md-form">
-                            <i class="fa fa-map-marker prefix"></i>
+                            <i class="iconefiltro fa fa-map-marker prefix"></i>
                             <label for="filtroCidadeEmpresa"><b>Cidade:</b></label>
-                            <input type="text" class="form-control" id="filtroCiadeEmpresa">
+                            <input type="text" class="txtinput form-control" id="filtroCiadeEmpresa">
                         </div>
-                        <div class="col-sm-3 md-form">
-                            <i class="fa fa-location-arrow prefix"></i>
+                        <div class="col-sm-2 md-form">
+                            <i class="iconefiltro fa fa-location-arrow prefix"></i>
                             <label for="filtroBairroEmpresa"><b>Bairro:</b></label>
-                            <input type="text" class="form-control" id="filtroBairroEmpresa">
+                            <input type="text" class="txtinput form-control" id="filtroBairroEmpresa">
+                        </div>
+                        <div class="col-sm-2">
+                            <button style="margin-top: 10px" type="button" class="btn btn-amber"><i style="margin-right: 5px;" class="fa fa-search" aria-hidden="true"></i>FILTRAR</button>
                         </div>
                     </div>
                 </form>
-                    
+                <hr>
             </div>	
 	</section>
 
 	<section class="contato">
 		<div class="container">
-			<div class="row">
-				<div class="col-sm-12 centered-col">
-					<h2 id="txt-capa"><span style="color: #FFD460;">00</span> grandes empresas já usam o nosso serviço!</h2>
-				</div>
-			</div>
-			<br>
-			<div class="row">
-				<div class="img-capa col-sm-3 centered-col"><img style="opacity: 0.8;" width="150" heigth="150" src="res/img/praiamar-logo.png"></div>
-				<div class="img-capa col-sm-3 centered-col"><img style="opacity: 0.8;" width="150" heigth="150" src="res/img/outback-logo.png"></div>
-				<div class="img-capa col-sm-3 centered-col"><img style="opacity: 0.8;" width="150" heigth="150" src="res/img/bomprato-logo.png"></div>
-				<div class="img-capa col-sm-3 centered-col"><img style="opacity: 0.8;" width="150" heigth="150" src="res/img/mcdonalds-logo.png"></div>
-			</div>
-			<br><br><br>
-
-			<div class="row">
-                <div class="col-md-12">
-				<a href="cadastro_empresa.html"><button type="button"  class="btn btn-deep-orange waves-effect col-sm-12 centered-col animated pulse infinite" style="font-size: 125%">Gostou? Que tal começar agora? <i style = "bottom: 2px;" class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
-			</div>
-        </div>
-			<br><br><br>
+                    <div class="row empresa">
+                    
+                        <div class="col-sm-2">
+                            <img src="res/img/logo_modelo.png">
+                        </div>
+                        <div class="bold col-sm-4">
+                            <h4 style="" class="boldTitulo">PREFEITURA DE PRAIA GRANDE</h4>
+                            <h6 class="bold" id="italic">Lorem ipsum dolor sit amet, pri constituto argumentum definitionem ei.
+                                        Tale invidunt adversarium nam te.</h6>
+                            <h6 class="bold">Telefone: (13)12345-6789</h6>
+                            <h6 class="bold">Endereço: Praça XV de Janeiro, Boqueirão. Praia Grande - SP</h6>
+                        </div>
+                        <div class="col-sm-2">
+                            <img src="res/img/logo_modelo.png">
+                        </div>
+                        <div class="bold col-sm-4">
+                            <h4 class="boldTitulo">FATEC-PG</h4>
+                            <h6 class="bold" id="italic">Lorem ipsum dolor sit amet, pri constituto argumentum definitionem ei.
+                                        Tale invidunt adversarium nam te.</h6>
+                            <h6 class="bold">Telefone: (13)12345-6789</h6>
+                            <h6 class="bold">Endereço: Praça XV de Janeiro, Boqueirão. Praia Grande - SP</h6>
+                        </div>
+                    </div>
 		</div>
 	</section>
         

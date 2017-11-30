@@ -10,17 +10,17 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul  class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a style="font-size: 35px;" class="nav-link" href="#">S<i class="fa fa-sun-o" aria-hidden="true"></i>LARI</a>
+                <a style="font-size: 35px;" class="nav-link" href="home.jsp">S<i class="fa fa-sun-o" aria-hidden="true"></i>LARI</a>
             </li>
             <li class="nav-item">
-                <a style="padding-top: 20px;" class="nav-link" href="home.html">HOME <span class="sr-only">(current)</span></a>
+                <a style="padding-top: 20px;" class="nav-link" href="home.jsp">HOME <span class="sr-only">(current)</span></a>
             </li>
             
             <li class="nav-item">
                 <a style="padding-top: 20px;" class="nav-link" href="#">ESTOQUE</a>
             </li>
             <li class="nav-item">
-                <a style="padding-top: 20px;" class="nav-link" href="#">EQUIPE</a>
+                <a style="padding-top: 20px;" class="nav-link" href="equipe.jsp">EQUIPE</a>
             </li>
 
             <li class="nav-item">

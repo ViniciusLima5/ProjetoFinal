@@ -16,16 +16,16 @@
                 <div class="modal-body">
                 	<form>
                     <div class="md-form form-sm">
-                        <i class="fa fa-id-card prefix"></i>
+                        <i class="fa fa-user prefix"></i>
                         
-                        <input type="text" id="form30" data-mask="99.999.999/9999-99" name="cnpjEmpresa" class="form-control">
-                        <label for="form30">CNPJ da sua empresa</label>
+                        <input type="text" id="form30" name="nomeUsuario" class="form-control">
+                        <label for="form30">Usuário: </label>
                     </div>
     
                     <div class="md-form form-sm">
                         <i class="fa fa-lock prefix"></i>
-                        <input type="password" id="form31" name="senhaEmpresa" class="form-control">
-                        <label for="form31">Sua senha</label>
+                        <input type="password" id="form31" name="senhaUsuario" class="form-control">
+                        <label for="form31">Senha</label>
                     </div>
     
                     <div class="text-center mt-2">
@@ -36,7 +36,6 @@
                 <!--Footer-->
                 <div class="modal-footer">
                     <div class="options text-center text-md-right mt-1">
-                        <p>Não possui uma conta? <a href="cadastro_empresa.php">Cadastre-se</a></p>
                         <p>Esqueceu a<a data-toggle="modal" data-target="#modalRecuperarSenha" data-dismiss="modal" href="#"> senha?</a></p>
                     </div>
                     <button type="button" class="btn btn-outline-warning waves-effect ml-auto" data-dismiss="modal">Fechar</button>
