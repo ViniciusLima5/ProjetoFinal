@@ -64,16 +64,16 @@ section {
 	padding-bottom: 50px;
 }
 
-.beneficios select {
+/*.beneficios select {
     margin-top: 17px;
     padding-bottom: 5px;
     border: 1px solid black !important;
     color: black !important;
-}
+}*/
 
-.beneficios select:after {
-    border: 1px solid orange !important;   
-}
+    .beneficios select:after {
+        border: 1px solid orange !important;   
+    }
 
 .beneficios .txtinput {
     padding-top: 10px !important;
@@ -88,9 +88,18 @@ section {
     border-bottom: 1px solid black !important;
 }
 
-.filtros label {
+.labelErrado {
     left: 17px !important;
     color: #494949 !important;
+}
+
+#filtroCategoriaEmpresa {
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    background: none;
+    border-bottom: 1px solid black;
+/*    margin-top: 20px;*/
 }
 
 .iconefiltro {

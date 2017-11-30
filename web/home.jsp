@@ -1,8 +1,3 @@
-<%-- 
-    Document   : home
-    Created on : 29/11/2017, 22:00:11
-    Author     : Paula e Marcelo
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -39,26 +34,45 @@
                     <div class="filtros row">
                         <div class="col-sm-3 md-form">
                             <i class="iconefiltro fa fa-building prefix"></i>
-                            <label for="filtroNomeEmpresa"><b>Nome da empresa:</b></label>
+                            <label class="labelErrado"  for="filtroNomeEmpresa"><b>Nome da empresa:</b></label>
                             <input style="padding-bottom: 10px;" type="text" class="txtinput form-control" id="filtroNome">
                           
                         </div>
                         <div class="col-sm-2 ">
                             
-                            <select id="filtroCategoriaEmpresa" class="form-control centered-col">
-                                <option selected disabled>Categoria</option>
-                                <option>Alimentação</option>
-                                <option>Beleza</option>
-                            </select>
+                            <div class="md-form">
+<!--                                <i style="top: 7px;" class="fa fa-list prefix"></i>-->
+<p>Categoria</p>
+                                <select  id="filtroCategoriaEmpresa" class="form-control browser-default">
+                                    <option disabled selected></option>
+                                    <option value="Alimentação">Alimentação</option>
+                                    <option value="Compras">Compras</option>
+                                    <option value="Entretenimento">Entretenimento</option>
+                                    <option value="Serviços">Serviços</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="col-sm-3 md-form">
-                            <i class="iconefiltro fa fa-map-marker prefix"></i>
-                            <label for="filtroCidadeEmpresa"><b>Cidade:</b></label>
-                            <input type="text" class="txtinput form-control" id="filtroCiadeEmpresa">
+                        <div class="col-sm-3">
+                            <div class="md-form">
+                                <i style="top: 7px;" class="fa fa-map-marker prefix"></i>
+                                <input required type="text" class="form-control" id="filtroCidadeEmpresa"  list = "cidades">
+                                <label style="color: #494949;" for="filtroCidadeEmpresa"><b>Cidade:</b></label>
+                                <datalist id="cidades">
+                                    
+                                    <option value="Praia Grande">
+                                    <option value="Guarujá">
+                                    <option value="Santos">
+                                    <option value="São Vicente">
+                                    <option value="Itanhaém">
+                                    <option value="Bertioga">
+                                    <option value="Mongaguá">
+                                    <option value="Peruíbe">
+                                </datalist>
+                            </div>
                         </div>
                         <div class="col-sm-2 md-form">
                             <i class="iconefiltro fa fa-location-arrow prefix"></i>
-                            <label for="filtroBairroEmpresa"><b>Bairro:</b></label>
+                            <label class="labelErrado" for="filtroBairroEmpresa"><b>Bairro:</b></label>
                             <input type="text" class="txtinput form-control" id="filtroBairroEmpresa">
                         </div>
                         <div class="col-sm-2">

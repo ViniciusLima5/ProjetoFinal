@@ -15,9 +15,9 @@
             <div class="col-md-6">
                 <h5 class="title">Links Úteis</h5>
                 <ul>
-                    <li><a style="color: #006064;" href="http://www.fatecpg.edu.br/" target="_blank">FATEC-PG</a></li>
-                    <li><a style="color: #006064;" href="#!">TRABALHE CONOSCO</a></li>
-                    <li><a style="color: #006064;" data-toggle="modal" data-target="#contatoModal" href="#!">CONTATO</a></li>
+                    <li><a style="color: black;" href="http://www.fatecpg.edu.br/" target="_blank">FATEC-PG</a></li>
+                    <li><a style="color: black;" href="#!">TRABALHE CONOSCO</a></li>
+                    <li><a style="color: black;" data-toggle="modal" data-target="#contatoModal" href="#!">CONTATO</a></li>
                 </ul>
             </div>      
         </div>
@@ -34,4 +34,5 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>  
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
-    <script type="text/javascript" src="js/jquery.mask.js"></script>
+    <script type="text/javascript" src="js/jquery.mask.js"></script
+    
