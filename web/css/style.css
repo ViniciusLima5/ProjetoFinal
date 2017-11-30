@@ -1,0 +1,567 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;	
+}
+
+@font-face {
+	font-family: yeah-papa;
+	src: url(../font/yeah-papa/YeahPapa.ttf);
+}
+
+#intro {
+	font-family: yeah-papa;
+}
+
+#titulo {
+	font-size: 800%;
+}
+
+#sol-titulo {
+	font-size: 500%;
+}
+
+#titulo, #sol-titulo, #subtitulo {
+	color: #f2bc32;
+}
+
+#subtitulo {
+	font-size: 450%;
+}
+
+nav ul li a {
+	font-size: 20px;
+}
+
+section {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.wave {
+	padding-top: 150px;
+	background-image: url(../res/img/bg1.jpg);
+	background-position: center top;
+	min-height: 800px;
+}
+
+.container-fluid {
+	padding: 0;
+	margin: 0;
+}
+
+.beneficios {
+	background: linear-gradient(#4DD0E2, #3cabb7)
+}
+
+#titulo-beneficios {
+	padding-bottom: 30px;
+}
+
+#beneficios {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.filtros input{
+    border-bottom: 1px solid black !important;
+}
+
+.filtros label {
+    left: 17px !important;
+    color: black !important;
+}
+
+.filtros i {
+    font-size: 28px !important;
+    top: 10px;
+    left: 23px;
+}
+
+.drop {
+    -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: none;
+  box-sizing: border-box;
+  color: #666;
+  cursor: default;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: sans-serif;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  box-sizing: inherit;
+  cursor: inherit;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+  -webkit-transition-property: none;
+  transition-property: none;
+  -webkit-transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+          transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.drop label.field {
+  border-radius: 2px;
+  color: #666;
+  display: block;
+  margin: 10px;
+  max-width: 300px;
+  padding: 8px;
+  opacity: 0;
+  position: relative;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  z-index: 1;
+}
+
+.drop label.field span {
+  color: inherit;
+  display: block;
+  font-size: 16px;
+  height: 20px;
+  line-height: 20px;
+  left: 9px;
+  pointer-events: none;
+  position: absolute;
+/*  top: 32px;*/
+  -webkit-transform: scale(1) translateY(0);
+          transform: scale(1) translateY(0);
+  -webkit-transition-property: color, font-size, top;
+  transition-property: color, font-size, top;
+  z-index: 1;
+}
+
+.drop label.field span.required::after {
+  color: inherit;
+  content: "*";
+  display: block;
+  height: 20px;
+  left: -20px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: 30px;
+  width: 20px;
+}
+
+.error label.field span {
+  color: #F02318;
+}
+
+.drop label.field .psuedo_select {
+  background: rgba(255, 255, 255, 0);
+  position: relative;
+  border-color: black;
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  color: black;
+  cursor: pointer;
+  font-size: 20px;
+  height: 24px;
+  line-height: 24px;
+  margin: 0px 32px 0 0;
+  min-width: 250px;
+  padding-top: 0px;
+  outline: 0;
+  z-index: 1;
+}
+
+.drop label.field .psuedo_select::after {
+  background: url("data:image/svg+xml;utf8,<svg fill='#666' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'> <path d='M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z'/> <path d='M0-.75h24v24H0z' fill='none'/> </svg>"), no-repeat;
+  content: "";
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-transition-property: background;
+  transition-property: background;
+}
+
+.drop label.field .psuedo_select .selected {
+  height: 24px;
+  left: 1px;
+  line-height: 24px;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  -webkit-transform: translateY(24px);
+          transform: translateY(24px);
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  transition-property: opacity, transform;
+  transition-property: opacity, transform, -webkit-transform;
+  will-change: transform;
+}
+
+.drop label.field .psuedo_select ul {
+  background: #fff;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+  display: block;
+  height: 0;
+  list-style: none;
+  margin-top: 0px;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0 1px;
+  pointer-events: none;
+  -webkit-transition-property: height, opacity;
+  transition-property: height, opacity;
+  width: 100%;
+  z-index: 2;
+}
+
+.drop label.field .psuedo_select ul li {
+  height: 32px;
+  padding: 4px 4px;
+}
+
+.drop label.field .deselect {
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: -1;
+}
+
+.drop label.field.focused {
+  color: #007BED;
+}
+
+.drop label.field.focused .psuedo_select {
+  border-color: #007BED;
+}
+
+.drop label.field.focused .psuedo_select::after {
+  background: url("data:image/svg+xml;utf8,<svg fill='#007BED' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'> <path d='M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z'/> <path d='M0-.75h24v24H0z' fill='none'/> </svg>"), no-repeat;
+}
+
+.drop label.field.focused .psuedo_select ul {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.contato {
+	background: linear-gradient(#3cabb7, #0b6c70)
+}
+
+.centered-col {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-capa {
+    padding-top: 20px;
+}
+
+.social [class*="fa fa-"] {
+    background-color: #333;
+    border-radius: 30px;
+    color: #fff;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    margin: auto 3px;
+    width: 40px;
+    font-size: 25px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.5s ease 0s;
+    margin-bottom: 10px;
+}
+
+.social .fa-facebook:hover{
+	background-color: #3b5998;
+}
+
+.social .fa-google-plus:hover{
+	background-color: #d34836;
+}
+
+.social .fa-linkedin:hover{
+	background-color: #0077B5;
+}
+
+.social .fa-twitter:hover{
+	background-color: #00aced;
+}
+
+.hidden {
+	opacity: 0;
+}
+
+.op {
+	opacity: 0.9;
+}
+
+.fa-sign-in {
+	color: black;
+}
+
+#secCadastroEmpresa, .acoes-estoque {
+	padding-top: 150px;
+	background-color: #e0f8fa;
+}
+
+#secCadastroEmpresa label {
+	left: 15px;
+}
+
+.dados-empresa {
+	border: 3px solid black;
+}
+
+.row-bottom-margin { margin-bottom: 0px;
+padding-bottom: 0; }
+
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  display: table;
+  width: 100%;
+}
+
+.content {
+  display: table-row;
+  height: 100%;
+  margin-top: 150px;
+ 
+}
+
+.footer {
+  padding-top: 0px;
+}
+
+.tabela-estoque {
+	background-color: #e0f8fa;
+	padding-top: 150px;
+}
+
+.tabela-estoque tr {
+	text-align: center;
+}
+
+.tabela-estoque table, th, td {
+   border: 1px solid black !important;
+   
+}
+
+.fa-refresh:hover {
+	color: green;
+	transition: color 0.2s;
+	cursor: pointer;
+}
+
+.fa-close:hover {
+	color: red;
+	transition: color 0.2s;
+	cursor: pointer;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.tab-pane .fade .in .show .active {
+	background-color: black !important;
+}
+
+.nav-link .active {
+	color: white !important;
+}
+
+.equipe {
+/*    background-color: #e0f8fa;*/
+    background: linear-gradient(#3cabb7, #0b6c70);
+}
+
+#equipe {
+	text-align: center;
+	
+	padding: 150px 40px;
+}
+
+#equipe h2 {
+	font-size: 500%;
+	margin-bottom: 30px;
+    font-family: yeah-papa;
+    text-align: center;
+    color: #FFA000;
+    padding-bottom: 20px;
+}
+
+
+#foto img {
+	border: 2px solid black;
+	filter: grayscale(100%);
+	transition: filter 0.5s;
+	transition: border 0.5s;
+
+}
+
+#descricao {
+	margin: 20px 0;
+}
+
+#descricao h3 {
+	font-size: 275%;
+}
+
+.social [class*="fa fa-"] {
+    background-color: #333;
+    border-radius: 30px;
+    color: #fff;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    margin: auto 3px;
+    width: 35px;
+    font-size: 25px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.5s ease 0s;
+}
+
+.fa-twitter:hover { 
+    background-color: #46c0fb; 
+}
+
+#primeiro-membro, #segundo-membro, #terceiro-membro, #quarto-membro, #coracao {
+	opacity: 0;
+}
+
+#primeiro-membro:hover #foto img{
+	filter: grayscale(0%);
+}
+
+#segundo-membro:hover #foto img{
+	filter: grayscale(0%);
+}
+
+#terceiro-membro:hover #foto img{
+	filter: grayscale(0%);
+}
+
+#quarto-membro:hover #foto img{
+	filter: grayscale(0%);
+}
+
+#primeiro-membro:hover #foto img{
+	border: 2px solid #FFA000;
+}
+
+#segundo-membro:hover #foto img{
+	filter: grayscale(0%);
+	border: 2px solid #FFA000;
+}
+
+#terceiro-membro:hover #foto img{
+	filter: grayscale(0%);
+	border: 2px solid #FFA000;
+}
+
+#quarto-membro:hover #foto img{
+	filter: grayscale(0%);
+	border: 2px solid #FFA000;
+}
+
+
+#primeiro-membro:hover .social .fa-facebook{
+	background-color: #3b5998;
+}
+
+#primeiro-membro:hover .social .fa-github{
+	background-color: #6e5494;
+}
+
+#primeiro-membro:hover .social .fa-linkedin{
+	background-color: #0077B5;
+}
+
+#segundo-membro:hover .social .fa-facebook{
+	background-color: #3b5998;
+}
+
+#segundo-membro:hover .social .fa-github{
+	background-color: #6e5494;
+}
+
+#segundo-membro:hover .social .fa-linkedin{
+	background-color: #0077B5;
+}
+
+#terceiro-membro:hover .social .fa-facebook{
+	background-color: #3b5998;
+}
+
+#terceiro-membro:hover .social .fa-github{
+	background-color: #6e5494;
+}
+
+#terceiro-membro:hover .social .fa-linkedin{
+	background-color: #0077B5;
+}
+
+#quarto-membro:hover .social .fa-facebook{
+	background-color: #3b5998;
+}
+
+#quarto-membro:hover .social .fa-github{
+	background-color: #6e5494;
+}
+
+#quarto-membro:hover .social .fa-linkedin{
+	background-color: #0077B5;
+}
+
+#quarto-membro:hover #descricao h3 {
+	color: #FFA000;
+}
+
+#quarto-membro:hover #descricao h4 {
+	color: #ce7f00;
+}
+
+#terceiro-membro:hover #descricao h3 {
+	color: #FFA000;
+}
+
+#terceiro-membro:hover #descricao h4 {
+	color: #ce7f00
+}
+
+#segundo-membro:hover #descricao h3 {
+	color: #FFA000;
+}
+
+#segundo-membro:hover #descricao h4 {
+	color: #ce7f00;
+}
+
+#primeiro-membro:hover #descricao h3 {
+	color: #FFA000;
+}
+
+#primeiro-membro:hover #descricao h4 {
+	color: #ce7f00;
+}
+
