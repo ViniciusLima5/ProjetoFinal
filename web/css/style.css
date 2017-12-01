@@ -74,6 +74,10 @@ section {
     .beneficios select:after {
         border: 1px solid orange !important;   
     }
+    
+    .nav-link {
+        padding-right: 30px !important;
+    }
 
 .beneficios .txtinput {
     padding-top: 10px !important;
@@ -99,7 +103,7 @@ section {
     border-top: none;
     background: none;
     border-bottom: 1px solid black;
-/*    margin-top: 20px;*/
+/*    margin-top: 20px;*/   
 }
 
 .iconefiltro {

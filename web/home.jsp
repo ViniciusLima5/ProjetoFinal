@@ -38,19 +38,21 @@
                             <input style="padding-bottom: 10px;" type="text" class="txtinput form-control" id="filtroNome">
                           
                         </div>
-                        <div class="col-sm-2 ">
-                            
+                        <div class="col-sm-2">
+
                             <div class="md-form">
-<!--                                <i style="top: 7px;" class="fa fa-list prefix"></i>-->
-<p>Categoria</p>
-                                <select  id="filtroCategoriaEmpresa" class="form-control browser-default">
-                                    <option disabled selected></option>
+<!--                                <i style="top: 7px; " class="fa fa-map-marker prefix"></i>-->
+                                
+                                <label style="color: #494949;" for="filtroCategoriaEmpresa"><b>Categoria:</b></label>
+                                <select style="margin-top: 35px; " id="filtroCategoriaEmpresa">
+                                    <option disabled selected>Selecionar categoria...</option>
                                     <option value="Alimentação">Alimentação</option>
                                     <option value="Compras">Compras</option>
                                     <option value="Entretenimento">Entretenimento</option>
                                     <option value="Serviços">Serviços</option>
                                 </select>
-                            </div>
+                            
+                        </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="md-form">

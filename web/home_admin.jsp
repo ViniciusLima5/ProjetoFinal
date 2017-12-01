@@ -25,9 +25,12 @@
 <section class="tabela-estoque content">
 	<div style="padding-top: 50px;" class="container">
 	<div class="row">
-		<table class="table table-bordered table-hover">
+            <div class="col-sm-12 centered-col">
+            <input style="text-align: center; margin-bottom: 30px;" type="text" id="myInput" onkeyup="myFunction()" placeholder="Digite o nome da empresa para pesquisar na tabela...">
+            </div>
+		<table id="myTable" class="table table-bordered table-hover">
   <thead class="blue lighten-3">
-    <tr>
+    <tr class="header">
       <th width="5%">Código</th>
       <th>Nome</th>
       <th>Descrição</th>
@@ -42,7 +45,7 @@
   <tbody>
     <tr class="table-info">
       <th scope="row">1</th>
-      <td>Mark</td>
+      <td>Jose</td>
       <td>Lorem</td>
       <td>Praia Grande</td>
       <td>Boqueirão</td>
@@ -52,7 +55,7 @@
     </tr>
     <tr class="table-info">
       <th scope="row">1</th>
-      <td>Mark</td>
+      <td>Caros</td>
       <td>Lorem</td>
       <td>Praia Grande</td>
       <td>Boqueirão</td>
@@ -62,7 +65,7 @@
     </tr>
     <tr class="table-info">
       <th scope="row">1</th>
-      <td>Mark</td>
+      <td>Vinicius</td>
       <td>Lorem</td>
       <td>Praia Grande</td>
       <td>Boqueirão</td>
@@ -72,7 +75,7 @@
     </tr>
     <tr class="table-info">
       <th scope="row">1</th>
-      <td>Mark</td>
+      <td>Candido</td>
       <td>Lorem</td>
       <td>Praia Grande</td>
       <td>Boqueirão</td>
@@ -111,10 +114,10 @@
                             <label for="adicionarNomeEmpresa">Nome da empresa</label>
                         </div>
                         
-                         <div class="md-form">
-                                <i class="fa fa-map-marker prefix"></i>
+                         <div class="md-form form-sm">
+                                <i class="fa fa-list prefix"></i>
                                 <input required type="text" class="form-control" id="adicionarCategoriaEmpresa"  list = "cidade">
-                                <label style="color: #494949;" for="adicionarCategoriaEmpresa"><b>Categoria:</b></label>
+                                <label style="color: #494949;" for="adicionarCategoriaEmpresa">Categoria:</label>
                                 <datalist id="cidade">
                                     
                                     <option value="Alimentação">
@@ -222,6 +225,8 @@
            
         </div>
     </div>
+        
+        
             
         
         <%@include file="WEB-INF/jspf/modal_login.jspf"%>
