@@ -23,8 +23,18 @@ public class DatabaseCreatorListener implements ServletContextListener {
                         "       REFERENCES users(id)\n" +
                         ")");
             System.out.println("Criada tabela companies.");
+            s.execute("INSERT INTO companies VALUES("
+                + "default"
+                + ", 'Compania Alimentação'"
+                + ", 'Praia Grande'" 
+                + ", 'Boqueirão'" 
+                + ", 'Av.Costa e Silva'" 
+                + ", '13/12/2017 11:18:45'"
+                + ", 'Alimentação'"
+                + ", 1"   
+                + ")");
         }catch(Exception ex2){
-            System.out.println("Ero ao criar a companies: "+ex2.getMessage());
+            System.out.println("Erro ao criar a companies: "+ex2.getMessage());
         }
     }
     private void createUsersTable(Statement s){
@@ -49,7 +59,7 @@ public class DatabaseCreatorListener implements ServletContextListener {
                 + ")");
             System.out.println("Usuário admin criado com a senha '1234'.");
         }catch(Exception ex2){
-            System.out.println("Ero ao criar a users: "+ex2.getMessage());
+            System.out.println("Erro ao criar a users: "+ex2.getMessage());
         }
     }
 //    private void createVehicleStaysTable(Statement s){
