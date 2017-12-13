@@ -6,8 +6,8 @@
 <%
     String loginErrorMessage = null;
     if(request.getParameter("do-login")!= null){
-        String login = request.getParameter("login");
-        String pass = request.getParameter("pass");
+        String login = request.getParameter("nomeUsuario");
+        String pass = request.getParameter("senhaUsuario");
         try{
             User u = User.getUser(login, pass);
             if(u==null){
@@ -17,11 +17,13 @@
                 session.setAttribute("me.name", u.getName());
                 session.setAttribute("me.login", u.getLogin());
                 session.setAttribute("me.passwordHash", u.getPasswordHash());
-                response.sendRedirect(request.getContextPath()+"stays.jsp");
+                response.sendRedirect(request.getContextPath());//+"stays.jsp");
             }
         }catch(Exception ex){
             loginErrorMessage = ex.getMessage();
+            System.out.println(ex.getMessage());
         }
+        System.out.println(session.getAttribute("me.name"));
     }
 %>
 <html>
@@ -31,8 +33,14 @@
     <body>
         <%if(loginErrorMessage!=null){%>
                 <div style="color: red;"><%=loginErrorMessage%></div>
-            <%}%>
-        <%@include file="WEB-INF/jspf/navbar_deslogado.jspf"%>
+        <%}%>
+        
+        <%if(session.getAttribute("me.name")!=null){%>
+            <%@include file="WEB-INF/jspf/navbar_logado.jspf"%>
+        <%} else{%>
+            <%@include file="WEB-INF/jspf/navbar_deslogado.jspf"%>
+        <%}%>
+        
         <section class="wave">
 		<div class="container-fluid" id="intro">
 			<div class="row">

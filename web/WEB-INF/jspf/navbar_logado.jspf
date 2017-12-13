@@ -1,5 +1,14 @@
 <%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
+
+<%
+    if(request.getParameter("log-off")!= null){
+        session.invalidate();
+        response.sendRedirect("home.jsp");
+        return;
+    }
+%>
+
 <nav class="navbar fixed-top navbar-expand-lg navbar-light amber darken-2 scrolling-navbar">
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -10,7 +19,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul  class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a style="font-size: 35px; " class="nav-link" href="home.jsp">S<i class="fa fa-sun-o" aria-hidden="true"></i>LARI</a>
+                <a style="font-size: 35px; " class="nav-link" href="home.jsp">S<i class="fa fa-sun-o" aria-hidden="true"></i>Lari</a><%//=session.getAttribute("me.name")%>
             </li>
             <li class="nav-item">
                 <a style="padding-top: 20px; padding-right: 30px;" class="nav-link" href="home.jsp">HOME<span class="sr-only">(current)</span></a>
@@ -21,12 +30,18 @@
             <li class="nav-item">
                 <a style="padding-top: 20px; padding-right: 30px; " class="nav-link" href="equipe.jsp">EQUIPE</a>
             </li>
-
+            
             <li class="nav-item">
                 <a data-toggle="modal" data-target="#contatoModal" style="padding-top: 20px;" class="nav-link" href="#">CONTATO</a>
             </li>
         </ul>
-
-        <button style="border-radius: 10%;" type="button" class="btn-login btn btn-danger btn-rounded waves-effect"><i style="font-size: 25px; bottom: 3px; padding-right: 10px;" class="fa fa-power-off" aria-hidden="false"></i><span style="font-size: 20px">SAIR</span></button>
+            
+            
+                <span>Bem Vindo <%=session.getAttribute("me.name")%></span>
+            
+            
+            <form method="POST" action="">
+                <button style="border-radius: 10%;" type="submit" name="log-off" value="true" class="btn-login btn btn-danger btn-rounded waves-effect"><i style="font-size: 25px; bottom: 3px; padding-right: 10px;" class="fa fa-power-off" aria-hidden="false"></i><span style="font-size: 20px">SAIR</span></button>
+            </form>    
     </div>
 </nav>
