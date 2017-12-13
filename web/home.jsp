@@ -1,13 +1,37 @@
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="com.domain.web.User"%>
+
 <!DOCTYPE html>
+<%
+    String loginErrorMessage = null;
+    if(request.getParameter("do-login")!= null){
+        String login = request.getParameter("login");
+        String pass = request.getParameter("pass");
+        try{
+            User u = User.getUser(login, pass);
+            if(u==null){
+                loginErrorMessage = "Login e/ou senha não encontrados";
+            }else{
+                session.setAttribute("me.id", u.getId());
+                session.setAttribute("me.name", u.getName());
+                session.setAttribute("me.login", u.getLogin());
+                session.setAttribute("me.passwordHash", u.getPasswordHash());
+                response.sendRedirect(request.getContextPath()+"stays.jsp");
+            }
+        }catch(Exception ex){
+            loginErrorMessage = ex.getMessage();
+        }
+    }
+%>
 <html>
     <head>
        <%@include file="WEB-INF/jspf/head.jspf"%>
     </head>
     <body>
+        <%if(loginErrorMessage!=null){%>
+                <div style="color: red;"><%=loginErrorMessage%></div>
+            <%}%>
         <%@include file="WEB-INF/jspf/navbar_deslogado.jspf"%>
-        
         <section class="wave">
 		<div class="container-fluid" id="intro">
 			<div class="row">
