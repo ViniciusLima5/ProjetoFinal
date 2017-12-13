@@ -65,52 +65,31 @@
       <th width="10%">Bairro</th>
       <th width="15%">Rua</th>
       <th width="15%">Telefone</th>
+      <th width="15%">Data</th>
+      <th width="15%">usuário</th>
       <th width="8%">Excluir/Alterar</th>
 
     </tr>
   </thead>
   <tbody>
-    <tr class="table-info">
-      <th scope="row">1</th>
-      <td>Jose</td>
-      <td>Lorem</td>
-      <td>Praia Grande</td>
-      <td>Boqueirão</td>
-      <td>Rua do Teste, nº 361</td>
-      <td>(13)12345-6789</td>
-      <td><i style="margin-right: 5px;" class="fa fa-close fa-2x" aria-hidden="true"></i> <i style="margin-left: 5px;" class="fa fa-refresh fa-2x" aria-hidden="true"></i></td>
-    </tr>
-    <tr class="table-info">
-      <th scope="row">1</th>
-      <td>Caros</td>
-      <td>Lorem</td>
-      <td>Praia Grande</td>
-      <td>Boqueirão</td>
-      <td>Rua do Teste, nº 361</td>
-      <td>(13)12345-6789</td>
-      <td><i style="margin-right: 5px;" class="fa fa-close fa-2x" aria-hidden="true"></i> <i style="margin-left: 5px;" class="fa fa-refresh fa-2x" aria-hidden="true"></i></td>
-    </tr>
-    <tr class="table-info">
-      <th scope="row">1</th>
-      <td>Vinicius</td>
-      <td>Lorem</td>
-      <td>Praia Grande</td>
-      <td>Boqueirão</td>
-      <td>Rua do Teste, nº 361</td>
-      <td>(13)12345-6789</td>
-      <td><i style="margin-right: 5px;" class="fa fa-close fa-2x" aria-hidden="true"></i> <i style="margin-left: 5px;" class="fa fa-refresh fa-2x" aria-hidden="true"></i></td>
-    </tr>
-    <tr class="table-info">
-      <th scope="row">1</th>
-      <td>Candido</td>
-      <td>Lorem</td>
-      <td>Praia Grande</td>
-      <td>Boqueirão</td>
-      <td>Rua do Teste, nº 361</td>
-      <td>(13)12345-6789</td>
-      <td><i style="margin-right: 5px;" class="fa fa-close fa-2x" aria-hidden="true"></i> <i style="margin-left: 5px;" class="fa fa-refresh fa-2x" aria-hidden="true"></i></td>
-    </tr>
-    
+    <%try{%>
+        <%for(Company vs: Company.getCompanyByUser(Integer.parseInt((session.getAttribute("me.id")).toString()))){%>
+            <tr class="table-info">
+            <th scope="row"><%= vs.getId()%></th>
+            <td><%= vs.getName()%></td>
+            <td><%= vs.getDescription()%></td>
+            <td><%= vs.getCity()%></td>
+            <td><%= vs.getDistrict()%></td>
+            <td><%= vs.getStreet()%></td>
+            <td><%= vs.getPhone()%></td>
+            <td><%= vs.getDatetime()%></td>
+            <td><%= session.getAttribute("me.name")%></td>
+            <td><i style="margin-right: 5px;" class="fa fa-close fa-2x" aria-hidden="true"></i> <i style="margin-left: 5px;" class="fa fa-refresh fa-2x" aria-hidden="true"></i></td>
+          </tr>
+        <%}%>
+        <%}catch(Exception e){%>
+            <div style="color: red;"><%=e.getMessage()%></div>
+        <%}%>
   </tbody>
 </table>
 	</div>

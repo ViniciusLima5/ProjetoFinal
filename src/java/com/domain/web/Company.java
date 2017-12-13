@@ -70,9 +70,8 @@ public class Company {
     
     public static ArrayList<Company> getCompanyByUser(int id_user) throws Exception{
         ArrayList<Company> list = new ArrayList<>();
-        String SQL = "SELECT * FROM companies WHERE id_user=?";
-        PreparedStatement s = Database.getConnection().prepareStatement(SQL);
-        s.setInt(1, id_user);
+        String SQL = "SELECT * FROM companies WHERE id_user="+id_user;
+        Statement s = Database.getConnection().createStatement();
         ResultSet rs = s.executeQuery(SQL);
         while(rs.next()){
             Company vs = new Company(
