@@ -14,7 +14,7 @@
                 </div>
                 <!--Body-->
                 <div class="modal-body">
-                	<form>
+                	<form method = "post">
                     <div class="md-form form-sm">
                         <i class="fa fa-user prefix"></i>
                         
@@ -29,7 +29,7 @@
                     </div>
     
                     <div class="text-center mt-2">
-                        <button type="submit" class="btn btn-warning"><span style="color: black;">Logar <i style="color: black !important;" class="fa fa-sign-in ml-1"></i></span></button>
+                        <button type="submit" name = "do-login" class="btn btn-warning"><span style="color: black;">Logar <i style="color: black !important;" class="fa fa-sign-in ml-1"></i></span></button>
                     </div>
                 	</form>
                 </div>
