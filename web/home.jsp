@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="com.domain.web.User"%>
+<%@page import="com.domain.web.Company"%>
 
 <!DOCTYPE html>
 <%
@@ -58,7 +59,7 @@
                     <div class="filtros row">
                         <div class="col-sm-3 md-form">
                             <i class="iconefiltro fa fa-building prefix"></i>
-                            <label class="labelErrado"  for="filtroNomeEmpresa"><b>Nome da empresa:</b></label>
+                            <label class="labelErrado" name="empresa" for="filtroNomeEmpresa"><b>Nome da empresa:</b></label>
                             <input style="padding-bottom: 10px;" type="text" class="txtinput form-control" id="filtroNome">
                           
                         </div>
@@ -68,7 +69,7 @@
 <!--                                <i style="top: 7px; " class="fa fa-map-marker prefix"></i>-->
                                 
                                 <label style="color: #494949;" for="filtroCategoriaEmpresa"><b>Categoria:</b></label>
-                                <select style="margin-top: 35px; " id="filtroCategoriaEmpresa">
+                                <select style="margin-top: 35px; " name="filtroCategoriaEmpresa">
                                     <option disabled selected>Selecionar categoria...</option>
                                     <option value="Alimentação">Alimentação</option>
                                     <option value="Compras">Compras</option>
@@ -102,13 +103,34 @@
                             <input type="text" class="txtinput form-control" id="filtroBairroEmpresa">
                         </div>
                         <div class="col-sm-2">
-                            <button style="margin-top: 10px" type="button" class="btn btn-amber"><i style="margin-right: 5px;" class="fa fa-search" aria-hidden="true"></i>FILTRAR</button>
+                            <button style="margin-top: 10px" type="button" name = "filtrar" class="btn btn-amber"><i style="margin-right: 5px;" class="fa fa-search" aria-hidden="true"></i>FILTRAR</button>
                         </div>
                     </div>
                 </form>
                 <hr>
             </div>	
 	</section>
+  
+<%
+    /*
+    if(session.getAttribute("me.login")==null){
+        response.sendRedirect(request.getContextPath());
+    }
+    String enterParkingErrorMessage = null;
+    if(request.getParameter("filtrar")!= null){
+        String empresa = request.getParameter("model");
+        String categoria = request.getParameter("filtroCategoriaEmpresa");
+        String cidade = request.getParameter("filtroCidadeEmpresa");
+        try{
+            
+            //Company.addVehicleStay(model, color, plate);
+            response.sendRedirect(request.getRequestURI());
+        }catch(Exception e){
+            enterParkingErrorMessage = e.getMessage();
+        }
+    } */
+
+%>
 
 	<section class="contato">
 		<div class="container">
