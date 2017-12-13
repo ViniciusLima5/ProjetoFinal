@@ -147,6 +147,7 @@
             <%try{%>
                 <div class="container">
                     <%for(Company vs: Company.geCompanyListHistory(empresa,cidade,bairro,categoria)){%>
+                        <div class="form-inline">
                             <div class="bold col-sm-6">
                                 <h4 style="" class="boldTitulo"><%= vs.getName() %></h4>
                                 <h6 class="bold" id="italic"><%= vs.getNiche() %></h6>
@@ -154,7 +155,7 @@
                                 <h6 class="bold">Telefone: <%= vs.getPhone() %></h6>
                                 <h6 class="bold">Endereço: <%= vs.getStreet()+", "+vs.getDistrict()+". "+vs.getCity() %></h6>
                             </div>
-                        
+                        </div>
                     <%}%>
                 </div>
             <%}catch(Exception e){%>
