@@ -18,21 +18,23 @@ public class DatabaseCreatorListener implements ServletContextListener {
                         "    , street varchar(200) not null\n" +
                         "    , datetime timestamp not null\n" +
                         "    , niche varchar(200) not null\n" +
+                        "    , description varchar(300) not null\n" +
+                        "    , phone varchar(13) not null\n" +
                         "    , id_user integer not null\n" +
                         "    , CONSTRAINT FK_companies_users FOREIGN KEY (id_user)\n" +
                         "       REFERENCES users(id)\n" +
                         ")");
             System.out.println("Criada tabela companies.");
-            s.execute("INSERT INTO companies VALUES("
-                + "default"
-                + ", 'Compania Alimentação'"
-                + ", 'Praia Grande'" 
-                + ", 'Boqueirão'" 
-                + ", 'Av.Costa e Silva'" 
-                + ", '13/12/2017 11:18:45'"
-                + ", 'Alimentação'"
-                + ", 1"   
-                + ")");
+//            s.execute("INSERT INTO companies VALUES("
+//                + "default"
+//                + ", 'Compania Alimentação'"
+//                + ", 'Praia Grande'" 
+//                + ", 'Boqueirão'" 
+//                + ", 'Av.Costa e Silva'" 
+//                + ", '13/12/2017 11:18:45'"
+//                + ", 'Alimentação'"
+//                + ", 1"   
+//                + ")");
         }catch(Exception ex2){
             System.out.println("Erro ao criar a companies: "+ex2.getMessage());
         }

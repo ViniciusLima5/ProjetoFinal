@@ -1,4 +1,31 @@
+<%@page import="com.domain.web.Company"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%
+    String newEmpresaErrorMessage = null;
+    if(request.getParameter("novaEmpresa") != null){
+        String name = request.getParameter("nomeEmpresa").toString();
+        String city = request.getParameter("cidadeEmpresa").toString();
+        String district = request.getParameter("bairroEmpresa").toString();
+        String street = request.getParameter("ruaEmpresa").toString();
+        String niche = request.getParameter("nichoEmpresa").toString();
+        String description = request.getParameter("descricaoEmpresa").toString();
+        String phone = request.getParameter("telefoneEmpresa").toString();
+        int id_user = Integer.parseInt((session.getAttribute("me.id")).toString());
+        try{
+            Company.addCompany(name, city, district, street, niche, description, phone, id_user);
+            out.println("<script>");
+            out.println("alert('Cadastro Efetuado com sucesso');");
+            out.println("</script>");
+            
+            response.sendRedirect(request.getRequestURI());
+        }catch(Exception e){
+            newEmpresaErrorMessage = e.getMessage();
+            System.out.println(newEmpresaErrorMessage);
+        }
+    }   
+%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -107,16 +134,16 @@
                     <div class="modal-body mb-0">
 
                         <p class="lead text-center">Cadastre as informações da empresa</p>
-                        <form>
+                        <form method="POST" action="">
                         <div class="md-form form-sm">
                             <i class="fa fa-building prefix"></i>
-                            <input required type="text" id="adicionarNomeEmpresa" class="form-control">
+                            <input required type="text" name="nomeEmpresa" id="adicionarNomeEmpresa" class="form-control">
                             <label for="adicionarNomeEmpresa">Nome da empresa</label>
                         </div>
                         
                          <div class="md-form form-sm">
                                 <i class="fa fa-list prefix"></i>
-                                <input required type="text" class="form-control" id="adicionarCategoriaEmpresa"  list = "cidade">
+                                <input required type="text" name="nichoEmpresa" class="form-control" id="adicionarCategoriaEmpresa"  list = "cidade">
                                 <label style="color: #494949;" for="adicionarCategoriaEmpresa">Categoria:</label>
                                 <datalist id="cidade">
                                     
@@ -130,7 +157,7 @@
 
                         <div class="md-form form-sm">
                             <i class="fa fa-map-marker prefix"></i>
-                            <input required type="text" class="form-control" id="adicionarCidadeEmpresa"  list = "cidades">
+                            <input required type="text" name="cidadeEmpresa" class="form-control" id="adicionarCidadeEmpresa"  list = "cidades">
                             <label for="adicionarCidadeEmpresa">Cidade</label>
                             <datalist id="cidades">
                                 <option selected disabled value="Cidade">
@@ -147,38 +174,36 @@
 
                         <div class="md-form form-sm">
                             <i class="fa fa-location-arrow prefix"></i>
-                            <input required type="text" id="adicionarBairroEmpresa" class="form-control">
+                            <input required type="text" name="bairroEmpresa" id="adicionarBairroEmpresa" class="form-control">
                             <label for="adicionarBairroEmpresa">Bairro</label>
                         </div>
                         
                         <div class="md-form form-sm">
                             <i class="fa fa-road prefix"></i>
-                            <input required type="text" id="adicionarRuaEmpresa" class="form-control">
+                            <input required type="text" name="ruaEmpresa" id="adicionarRuaEmpresa" class="form-control">
                             <label for="adicionarRuaEmpresa">Rua</label>
                         </div>
                             
                         <div class="md-form form-sm">
                             <i class="fa fa-phone prefix"></i>
-                            <input required type="text" data-mask="(99)999999999" id="adicionarTelefoneEmpresa" class="form-control">
+                            <input required type="text" name="telefoneEmpresa" data-mask="(99)999999999" id="adicionarTelefoneEmpresa" class="form-control">
                             <label for="adicionarTelefoneEmpresa">Telefone</label>
                         </div>
                             
                         <div class="md-form form-sm">
                             <i class="fa fa-list prefix"></i>
-                            <textarea rows="1" cols="35" id="adicionarDescricaoEmpresa" class="form-control"></textarea>
+                            <textarea rows="1" cols="35" name="descricaoEmpresa" id="adicionarDescricaoEmpresa" class="form-control"></textarea>
                             <label for="adicionarDescricaoEmpresa">Descrição</label>
                         </div>
                             
-                        <div class="md-form">
+<!--                        <div class="md-form">
                             <i class="fa fa-picture-o prefix"></i>
                             <input required style="margin-left: 50px;" type="button" class="btn btn-default" id="adicionarLogoEmpresa" value="Clique para adicionar logo da empresa" onclick="document.getElementById('file').click();" />
                             <input type="file" style="display:none;" id="file" name="file"/>
-                        </div>
+                        </div>-->
                         <div class="text-center mt-1-half">
-                            <input type="submit" class="btn btn-success" value="ADICIONAR">
+                            <input type="submit" name="novaEmpresa" class="btn btn-success" value="ADICIONAR">
                             <button class="btn btn-outline-danger waves-effect" data-dismiss="modal">CANCELAR</button>
-                          
-                            
                         </div>
                         </form>
                     </div>

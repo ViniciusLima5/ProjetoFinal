@@ -2,7 +2,7 @@
 <%@ page pageEncoding="UTF-8" %>
 
 <%
-    if(request.getParameter("log-off")!= null){
+    if (request.getParameter("log-off") != null) {
         session.invalidate();
         response.sendRedirect("home.jsp");
         return;
@@ -12,7 +12,7 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-light amber darken-2 scrolling-navbar">
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-        aria-label="Toggle navigation">
+            aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -30,18 +30,18 @@
             <li class="nav-item">
                 <a style="padding-top: 20px; padding-right: 30px; " class="nav-link" href="equipe.jsp">EQUIPE</a>
             </li>
-            
+
             <li class="nav-item">
                 <a data-toggle="modal" data-target="#contatoModal" style="padding-top: 20px;" class="nav-link" href="#">CONTATO</a>
             </li>
         </ul>
-            
-            
-                <span>Bem Vindo <%=session.getAttribute("me.name")%></span>
-            
-            
-            <form method="POST" action="">
-                <button style="border-radius: 10%;" type="submit" name="log-off" value="true" class="btn-login btn btn-danger btn-rounded waves-effect"><i style="font-size: 25px; bottom: 3px; padding-right: 10px;" class="fa fa-power-off" aria-hidden="false"></i><span style="font-size: 20px">SAIR</span></button>
-            </form>    
+
+
+        <span>Bem Vindo <%=session.getAttribute("me.name")%></span>
+
+
+        <form method="POST" action="">
+            <button style="border-radius: 10%;" type="submit" name="log-off" value="true" class="btn-login btn btn-danger btn-rounded waves-effect"><i style="font-size: 25px; bottom: 3px; padding-right: 10px;" class="fa fa-power-off" aria-hidden="false"></i><span style="font-size: 20px">SAIR</span></button>
+        </form>    
     </div>
 </nav>
