@@ -93,7 +93,7 @@ public class Company {
         return list;
     }
     
-    public static ArrayList<Company> geCompanyListHistory(String empresa, String cidade, String bairro) throws Exception{
+    public static ArrayList<Company> geCompanyListHistory(String empresa, String cidade, String bairro, String categoria) throws Exception{
         ArrayList<Company> list = new ArrayList<>();
         String SQL = "SELECT * FROM companies";
         String busca = "";
@@ -113,6 +113,13 @@ public class Company {
             else
                 busca = " WHERE ";
             SQL += " district = like '%"+bairro+"%'";
+        }
+        if(categoria!=null){
+            if(categoria!=null)
+                categoria += " AND ";
+            else
+                categoria = " WHERE ";
+            SQL += " niche = like '%"+categoria+"%'";
         }
         Statement s = Database.getConnection().createStatement();
         ResultSet rs = s.executeQuery(SQL);

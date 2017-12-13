@@ -27,27 +27,27 @@
     }
     
     String empresa = null;
-    if(request.getParameter("empresa")!=null){
-        if(!request.getParameter("empresa").equals("")){
-            empresa = request.getParameter("empresa");
+    if(request.getParameter("filtroEmpresa")!=null){
+        if(!request.getParameter("filtroEmpresa").equals("")){
+            empresa = request.getParameter("filtroEmpresa");
         }
     }
     String categoria = null;
-    if(request.getParameter("categoria")!=null){
-        if(!request.getParameter("categoria").equals("")){
-            categoria = request.getParameter("categoria");
+    if(request.getParameter("filtroCategoriaEmpresa")!=null){
+        if(!request.getParameter("filtroCategoriaEmpresa").equals("")){
+            categoria = request.getParameter("filtroCategoriaEmpresa");
         }
     }
     String cidade = null;
-    if(request.getParameter("cidade")!=null){
-        if(!request.getParameter("cidade").equals("")){
-            cidade = request.getParameter("cidade");
+    if(request.getParameter("filtroCidadeEmpresa")!=null){
+        if(!request.getParameter("filtroCidadeEmpresa").equals("")){
+            cidade = request.getParameter("filtroCidadeEmpresa");
         }
     }
     String bairro = null;
-    if(request.getParameter("bairro")!=null){
-        if(!request.getParameter("bairro").equals("")){
-            bairro = request.getParameter("bairro");
+    if(request.getParameter("filtroBairroEmpresa")!=null){
+        if(!request.getParameter("filtroBairroEmpresa").equals("")){
+            bairro = request.getParameter("filtroBairroEmpresa");
         }
     }
 %>
@@ -93,7 +93,7 @@
                         <div class="col-sm-3 md-form">
                             <i class="iconefiltro fa fa-building prefix"></i>
                             <label class="labelErrado" name="empresa" for="filtroNomeEmpresa"><b>Nome da empresa:</b></label>
-                            <input style="padding-bottom: 10px;" type="text" class="txtinput form-control" id="filtroNome">
+                            <input style="padding-bottom: 10px;" type="text" class="txtinput form-control" id="filtroNome" name="filtroEmpresa">
                           
                         </div>
                         <div class="col-sm-2">
@@ -115,7 +115,7 @@
                         <div class="col-sm-3">
                             <div class="md-form">
                                 <i style="top: 7px;" class="fa fa-map-marker prefix"></i>
-                                <input type="text" class="form-control" id="filtroCidadeEmpresa"  list = "cidades">
+                                <input type="text" class="form-control" id="filtroCidadeEmpresa" name="filtroCidadeEmpresa"  list = "cidades">
                                 <label style="color: #494949;" for="filtroCidadeEmpresa"><b>Cidade:</b></label>
                                 <datalist id="cidades">
                                     
@@ -143,41 +143,16 @@
                 <hr>
             </div>	
 	</section>
-  
-<%
-    /*
-    if(session.getAttribute("me.login")==null){
-        response.sendRedirect(request.getContextPath());
-    }
-    String enterParkingErrorMessage = null;
-    if(request.getParameter("filtrar")!= null){
-        String empresa = request.getParameter("model");
-        String categoria = request.getParameter("filtroCategoriaEmpresa");
-        String cidade = request.getParameter("filtroCidadeEmpresa");
-        try{
-            
-            //Company.addVehicleStay(model, color, plate);
-            response.sendRedirect(request.getRequestURI());
-        }catch(Exception e){
-            enterParkingErrorMessage = e.getMessage();
-        }
-    } */
-
-%>
-
-
-
-
-
 	<section class="contato">
             <%try{%>
                 <div class="container">
-                    <%for(Company vs: Company.geCompanyListHistory(empresa,cidade,bairro)){%>
+                    <%for(Company vs: Company.geCompanyListHistory(empresa,cidade,bairro,categoria)){%>
                             <div class="bold col-sm-6">
                                 <h4 style="" class="boldTitulo"><%= vs.getName() %></h4>
+                                <h6 class="bold" id="italic"><%= vs.getNiche() %></h6>
                                 <h6 class="bold" id="italic"><%= vs.getDescription() %></h6>
                                 <h6 class="bold">Telefone: <%= vs.getPhone() %></h6>
-                                <h6 class="bold">Endereço: <%= vs.getStreet()+", "+vs.getDistrict()+". "+vs.getCity()+" - "+vs.getNiche() %></h6>
+                                <h6 class="bold">Endereço: <%= vs.getStreet()+", "+vs.getDistrict()+". "+vs.getCity() %></h6>
                             </div>
                         
                     <%}%>
