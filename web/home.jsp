@@ -173,27 +173,13 @@
             <%try{%>
                 <div class="container">
                     <%for(Company vs: Company.geCompanyListHistory(empresa,cidade,bairro)){%>
-                        <div class="row empresa">
-                            <div class="col-sm-2">
-                                <img src="res/img/logo_modelo.png">
-                            </div>
-                            <div class="bold col-sm-4">
+                            <div class="bold col-sm-6">
                                 <h4 style="" class="boldTitulo"><%= vs.getName() %></h4>
                                 <h6 class="bold" id="italic"><%= vs.getDescription() %></h6>
                                 <h6 class="bold">Telefone: <%= vs.getPhone() %></h6>
                                 <h6 class="bold">Endereço: <%= vs.getStreet()+", "+vs.getDistrict()+". "+vs.getCity()+" - "+vs.getNiche() %></h6>
                             </div>
-                            <div class="col-sm-2">
-                                <img src="res/img/logo_modelo.png">
-                            </div>
-                            <div class="bold col-sm-4">
-                                <h4 class="boldTitulo">FATEC-PG</h4>
-                                <h6 class="bold" id="italic">Lorem ipsum dolor sit amet, pri constituto argumentum definitionem ei.
-                                            Tale invidunt adversarium nam te.</h6>
-                                <h6 class="bold">Telefone: (13)12345-6789</h6>
-                                <h6 class="bold">Endereço: Praça XV de Janeiro, Boqueirão. Praia Grande - SP</h6>
-                            </div>
-                        </div>
+                        
                     <%}%>
                 </div>
             <%}catch(Exception e){%>
