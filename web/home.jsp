@@ -25,6 +25,31 @@
         }
         System.out.println(session.getAttribute("me.name"));
     }
+    
+    String empresa = null;
+    if(request.getParameter("empresa")!=null){
+        if(!request.getParameter("empresa").equals("")){
+            empresa = request.getParameter("empresa");
+        }
+    }
+    String categoria = null;
+    if(request.getParameter("categoria")!=null){
+        if(!request.getParameter("categoria").equals("")){
+            categoria = request.getParameter("categoria");
+        }
+    }
+    String cidade = null;
+    if(request.getParameter("cidade")!=null){
+        if(!request.getParameter("cidade").equals("")){
+            cidade = request.getParameter("cidade");
+        }
+    }
+    String bairro = null;
+    if(request.getParameter("bairro")!=null){
+        if(!request.getParameter("bairro").equals("")){
+            bairro = request.getParameter("bairro");
+        }
+    }
 %>
 <html>
     <head>
@@ -140,32 +165,41 @@
 
 %>
 
+
+
+
+
 	<section class="contato">
-		<div class="container">
-                    <div class="row empresa">
-                    
-                        <div class="col-sm-2">
-                            <img src="res/img/logo_modelo.png">
+            <%try{%>
+                <div class="container">
+                    <%for(Company vs: Company.geCompanyListHistory(empresa,cidade,bairro)){%>
+                        <div class="row empresa">
+                            <div class="col-sm-2">
+                                <img src="res/img/logo_modelo.png">
+                            </div>
+                            <div class="bold col-sm-4">
+                                <h4 style="" class="boldTitulo"><%= vs.getName() %></h4>
+                                <h6 class="bold" id="italic">Lorem ipsum dolor sit amet, pri constituto argumentum definitionem ei.
+                                            Tale invidunt adversarium nam te.</h6>
+                                <h6 class="bold">Telefone: (13)12345-6789</h6>
+                                <h6 class="bold">Endereço: Praça XV de Janeiro, Boqueirão. Praia Grande - SP</h6>
+                            </div>
+                            <div class="col-sm-2">
+                                <img src="res/img/logo_modelo.png">
+                            </div>
+                            <div class="bold col-sm-4">
+                                <h4 class="boldTitulo">FATEC-PG</h4>
+                                <h6 class="bold" id="italic">Lorem ipsum dolor sit amet, pri constituto argumentum definitionem ei.
+                                            Tale invidunt adversarium nam te.</h6>
+                                <h6 class="bold">Telefone: (13)12345-6789</h6>
+                                <h6 class="bold">Endereço: Praça XV de Janeiro, Boqueirão. Praia Grande - SP</h6>
+                            </div>
                         </div>
-                        <div class="bold col-sm-4">
-                            <h4 style="" class="boldTitulo">PREFEITURA DE PRAIA GRANDE</h4>
-                            <h6 class="bold" id="italic">Lorem ipsum dolor sit amet, pri constituto argumentum definitionem ei.
-                                        Tale invidunt adversarium nam te.</h6>
-                            <h6 class="bold">Telefone: (13)12345-6789</h6>
-                            <h6 class="bold">Endereço: Praça XV de Janeiro, Boqueirão. Praia Grande - SP</h6>
-                        </div>
-                        <div class="col-sm-2">
-                            <img src="res/img/logo_modelo.png">
-                        </div>
-                        <div class="bold col-sm-4">
-                            <h4 class="boldTitulo">FATEC-PG</h4>
-                            <h6 class="bold" id="italic">Lorem ipsum dolor sit amet, pri constituto argumentum definitionem ei.
-                                        Tale invidunt adversarium nam te.</h6>
-                            <h6 class="bold">Telefone: (13)12345-6789</h6>
-                            <h6 class="bold">Endereço: Praça XV de Janeiro, Boqueirão. Praia Grande - SP</h6>
-                        </div>
-                    </div>
-		</div>
+                    <%}%>
+                </div>
+            <%}catch(Exception e){%>
+                <div style="color: red;"><%=e.getMessage()%></div>
+            <%}%>
 	</section>
         
         <%@include file="WEB-INF/jspf/modal_login.jspf"%>

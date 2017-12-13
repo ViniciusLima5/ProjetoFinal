@@ -93,6 +93,49 @@ public class Company {
         return list;
     }
     
+    public static ArrayList<Company> geCompanyListHistory(String empresa, String cidade, String bairro) throws Exception{
+        ArrayList<Company> list = new ArrayList<>();
+        String SQL = "SELECT * FROM companies";
+        String busca = "";
+        if(empresa!=null){
+            busca = " WHERE name like '%"+empresa+"%'";
+        }
+        if(cidade!=null){
+            if(busca!=null)
+                busca += " AND ";
+            else
+                busca = " WHERE ";
+            SQL += " city = '"+cidade+"'";
+        }
+        if(bairro!=null){
+            if(busca!=null)
+                busca += " AND ";
+            else
+                busca = " WHERE ";
+            SQL += " district = like '%"+bairro+"%'";
+        }
+        Statement s = Database.getConnection().createStatement();
+        ResultSet rs = s.executeQuery(SQL);
+        while(rs.next()){
+            Company vs = new Company(
+                    rs.getInt("id")
+                    , rs.getString("name")
+                    , rs.getString("city")
+                    , rs.getString("district")
+                    , rs.getString("street")
+                    , rs.getTimestamp("datetime")
+                    , rs.getString("niche")
+                    , rs.getString("description")
+                    , rs.getString("phone")
+                    , rs.getInt("id_user")
+            );
+            list.add(vs);
+        }
+        rs.close();
+        s.close();
+        return list;
+    }
+    
     public static void addCompany(String name, String city, String district, String street, String niche, String description,String phone, int id_user)throws Exception{
         String SQL = "INSERT INTO companies VALUES("
                 + "default,?,?,?,?,?,?,?,?,?)";
