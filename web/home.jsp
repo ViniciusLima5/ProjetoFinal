@@ -115,7 +115,7 @@
                         <div class="col-sm-3">
                             <div class="md-form">
                                 <i style="top: 7px;" class="fa fa-map-marker prefix"></i>
-                                <input required type="text" class="form-control" id="filtroCidadeEmpresa"  list = "cidades">
+                                <input type="text" class="form-control" id="filtroCidadeEmpresa"  list = "cidades">
                                 <label style="color: #494949;" for="filtroCidadeEmpresa"><b>Cidade:</b></label>
                                 <datalist id="cidades">
                                     
@@ -136,7 +136,7 @@
                             <input type="text" class="txtinput form-control" id="filtroBairroEmpresa">
                         </div>
                         <div class="col-sm-2">
-                            <button style="margin-top: 10px" type="button" name = "filtrar" class="btn btn-amber"><i style="margin-right: 5px;" class="fa fa-search" aria-hidden="true"></i>FILTRAR</button>
+                            <button style="margin-top: 10px" type="submit" name = "filtrar" class="btn btn-amber"><i style="margin-right: 5px;" class="fa fa-search" aria-hidden="true"></i>FILTRAR</button>
                         </div>
                     </div>
                 </form>
@@ -179,10 +179,9 @@
                             </div>
                             <div class="bold col-sm-4">
                                 <h4 style="" class="boldTitulo"><%= vs.getName() %></h4>
-                                <h6 class="bold" id="italic">Lorem ipsum dolor sit amet, pri constituto argumentum definitionem ei.
-                                            Tale invidunt adversarium nam te.</h6>
-                                <h6 class="bold">Telefone: (13)12345-6789</h6>
-                                <h6 class="bold">Endereço: Praça XV de Janeiro, Boqueirão. Praia Grande - SP</h6>
+                                <h6 class="bold" id="italic"><%= vs.getDescription() %></h6>
+                                <h6 class="bold">Telefone: <%= vs.getPhone() %></h6>
+                                <h6 class="bold">Endereço: <%= vs.getStreet()+", "+vs.getDistrict()+". "+vs.getCity()+" - "+vs.getNiche() %></h6>
                             </div>
                             <div class="col-sm-2">
                                 <img src="res/img/logo_modelo.png">
